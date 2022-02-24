@@ -69,7 +69,7 @@ var cubeGeometry = new THREE.BoxGeometry (3,3,3);
     //camera.autoRotate = true;
     //camera.lookAt (new THREE.Vector3(5,90,5));
 
-    controls = new THREE.FirstPersonControls (camera, canvas.domElement);
+    controls = new THREE.FirstPersonControls(camera, canvas.domElement);
     
     var gridXZ = new THREE.GridHelper(100, 10);
     gridXZ.setColors( new THREE.Color(0xff0000), new THREE.Color(0xffffff) );
