@@ -1,8 +1,23 @@
-import {
-	MathUtils,
-	Spherical,
-	Vector3
-} from 'three';
+//import {
+//	MathUtils,
+//	Spherical,
+//	Vector3
+//} from 'three';
+
+const MathUtils = THREE.Math;
+
+const Spherical = THREE.Spherical;
+
+const Vector3 = THREE.Vector3;
+
+console.log("1");
+console.log(MathUtils);
+console.log("2");
+console.log(THREE.MathUtils);
+console.log("3");
+console.log(THREE);
+console.log('4')
+console.log(THREE.Math)
 
 const _lookDirection = new Vector3();
 const _spherical = new Spherical();
@@ -274,7 +289,7 @@ class FirstPersonControls {
 				this.object.lookAt( targetPosition );
 
 			};
-
+			
 		}();
 
 		this.dispose = function () {
@@ -329,4 +344,4 @@ function contextmenu( event ) {
 
 }
 
-export { FirstPersonControls };
+//export { FirstPersonControls };

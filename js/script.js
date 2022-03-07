@@ -16,8 +16,8 @@ cena.add(luzAmbiente2);
 
 
 
-//var materialChao = new THREE.MeshPhongMaterial({color: 0x454f7a});
-var materialChao = new THREE.TextureLoader().load('js/lua.jpg');
+var materialChao = new THREE.MeshPhongMaterial({color: 0x454f7a});
+//var materialChao = new THREE.TextureLoader().load('js/lua.jpg');
 var geoChao = new THREE.PlaneGeometry(5000, 5000, 100, 100);
 var chao = new THREE.Mesh(geoChao, materialChao);
 chao.position.x = 0
@@ -63,23 +63,34 @@ var cubeGeometry = new THREE.BoxGeometry (3,3,3);
     cena.add (cube);
 
     camera = new THREE.PerspectiveCamera (45, window.innerWidth/window.innerHeight, 1, 1000);
-    camera.position.y = 260;
-    camera.position.z = 400;
+    camera.position.y = 20;
+    camera.position.z = 20;
     camera.enableZoom = true;
     //camera.autoRotate = true;
     //camera.lookAt (new THREE.Vector3(5,90,5));
-
-    controls = new THREE.FirstPersonControls(camera, canvas.domElement);
+    //controls = new THREE.OrbitControls(camera, canvas.domElement);
+    controls = new FirstPersonControls(camera, canvas);
     
-    var gridXZ = new THREE.GridHelper(100, 10);
-    gridXZ.setColors( new THREE.Color(0xff0000), new THREE.Color(0xffffff) );
+    controls.movementSpeed = 1000; controls.lookSpeed = 0.125; controls.lookVertical = true;
+    console.log(controls)
+
+    
+    var gridXZ = new THREE.GridHelper(100, 10, 0x7A4549, 0x7A4549);
+    //gridXZ.setColors( new THREE.Color(0xff0000), new THREE.Color(0xffffff) );
+    //gridXZ.setColors( new THREE.Color(0x7A4549), new THREE.Color(0x7A4549) );
     cena.add(gridXZ);
 
 function desenhar() {
     render.render(cena, camera)
+    console.log('aqui')
+    //console.log(clock.getDelta)
+    console.log('aqui')
+    //var delta = this.clock.getDelta();
+    //controls.update(delta);
+    //update.object.y = 25;
+    controls.update()
     requestAnimationFrame(desenhar);
-    controls.update();
-    movimentar()
+    
 
 
 
@@ -91,7 +102,7 @@ function desenhar() {
 requestAnimationFrame(desenhar);
 
 var teclas = [];
-
+/*
 document.onkeydown = function (evt) {
     teclas[evt.keyCode] = true;
 }
@@ -137,4 +148,4 @@ function movimentar() {
    if(teclas[32]){// epasso
     //espaço
    }
-}
+} */
