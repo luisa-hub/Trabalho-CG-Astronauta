@@ -1,8 +1,4 @@
-//import {
-//	MathUtils,
-//	Spherical,
-//	Vector3
-//} from 'three';
+
 
 const MathUtils = THREE.Math;
 
@@ -10,14 +6,7 @@ const Spherical = THREE.Spherical;
 
 const Vector3 = THREE.Vector3;
 
-console.log("1");
-console.log(MathUtils);
-console.log("2");
-console.log(THREE.MathUtils);
-console.log("3");
-console.log(THREE);
-console.log('4')
-console.log(THREE.Math)
+
 
 const _lookDirection = new Vector3();
 const _spherical = new Spherical();
@@ -170,8 +159,11 @@ class FirstPersonControls {
 				case 'ArrowRight':
 				case 'KeyD': this.moveRight = true; break;
 
-				case 'KeyR': this.moveUp = true; break;
-				case 'KeyF': this.moveDown = true; break;
+				case 'Space':
+					if (this.object.position.y == 3){this.moveUp = true;break;}; 
+					if (this.object.position.y > 3){this.moveUp = false};break;
+				//case 'KeyR': this.moveUp = true; break;
+				//case 'KeyF': this.moveDown = true; break;
 
 			}
 
@@ -193,8 +185,10 @@ class FirstPersonControls {
 				case 'ArrowRight':
 				case 'KeyD': this.moveRight = false; break;
 
-				case 'KeyR': this.moveUp = false; break;
-				case 'KeyF': this.moveDown = false; break;
+				case 'Space':this.moveUp = false; break;
+
+				//case 'KeyR': this.moveUp = false; break;
+				//case 'KeyF': this.moveDown = false; break;
 
 			}
 
