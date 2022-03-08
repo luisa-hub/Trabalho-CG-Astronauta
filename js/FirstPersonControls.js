@@ -161,9 +161,9 @@ class FirstPersonControls {
 
 				case 'Space':
 					if (this.object.position.y == 3){this.moveUp = true;break;}; 
-					if (this.object.position.y > 3){this.moveUp = false};break;
-				//case 'KeyR': this.moveUp = true; break;
-				//case 'KeyF': this.moveDown = true; break;
+					if (this.object.position.y > 500){this.moveUp = false};break;
+				case 'KeyR': this.moveUp = true; break;
+				case 'KeyF': this.moveDown = true; break;
 
 			}
 
@@ -187,8 +187,8 @@ class FirstPersonControls {
 
 				case 'Space':this.moveUp = false; break;
 
-				//case 'KeyR': this.moveUp = false; break;
-				//case 'KeyF': this.moveDown = false; break;
+				case 'KeyR': this.moveUp = false; break;
+				case 'KeyF': this.moveDown = false; break;
 
 			}
 
