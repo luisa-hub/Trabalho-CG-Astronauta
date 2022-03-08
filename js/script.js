@@ -78,6 +78,19 @@ controls = new FirstPersonControls(camera, canvas); //cria firstPersonControls
 controls.movementSpeed = 100; 
 controls.lookSpeed = 0.125; 
 controls.lookVertical = false;
+
+//tentativa de export de objeto 3d
+const carregante = new GLTFLoader();
+
+carregante.load( 'https://skfb.ly/JrST', function ( gltf ) {
+
+	cena.add( gltf.scene );
+
+}, undefined, function ( error ) {
+
+	console.error( error );
+
+} );
     
 
 //grid de textes 
@@ -116,4 +129,6 @@ function desenhar() {
 
 
 requestAnimationFrame(desenhar);
+
+
 
